@@ -1,0 +1,29 @@
+<h1>{{ title }}</h1>
+
+<h2>Variable usage</h2>
+<label>Username:</label>
+<input [(ngModel)]="username" />
+
+<label>Email:</label>
+<input [(ngModel)]="email" />
+
+<label>Password:</label>
+<input [(ngModel)]="password" />
+<div>
+  <button (click)="submitVariables()">Submit</button>
+</div>
+
+<h2>Reactive form usage</h2>
+<form [formGroup]="form">
+  <label>Username:</label>
+  <input formControlName="username" />
+
+  <label>Email:</label>
+  <input formControlName="email" />
+
+  <label>Password:</label>
+  <input formControlName="password" />
+</form>
+<div>
+  <button (click)="submitForm()">Submit</button>
+</div>
