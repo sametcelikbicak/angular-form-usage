@@ -10,7 +10,9 @@
 <label>Password:</label>
 <input [(ngModel)]="password" />
 <div>
-  <button (click)="submitVariables()">Submit</button>
+  <button (click)="submitVariables()" [disabled]="password?.length < 4">
+    Submit
+  </button>
 </div>
 
 <h2>Reactive form usage</h2>
@@ -25,5 +27,5 @@
   <input formControlName="password" />
 </form>
 <div>
-  <button (click)="submitForm()">Submit</button>
+  <button (click)="submitForm()" [disabled]="form.invalid">Submit</button>
 </div>

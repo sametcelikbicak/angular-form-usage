@@ -1,5 +1,5 @@
 import { Component, OnInit, VERSION } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'my-app',
@@ -35,7 +35,10 @@ export class AppComponent implements OnInit {
     return this.formBuilder.group({
       username: this.formBuilder.control('user'),
       email: this.formBuilder.control(''),
-      password: this.formBuilder.control(''),
+      password: this.formBuilder.control('', [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
     });
   }
 }
